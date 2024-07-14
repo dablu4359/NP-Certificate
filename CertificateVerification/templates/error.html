@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+<center><image class="align-items-center justify-content-center text-center>" src="{% static 'favicon.png' %}" style="width:30%;"></center>
+          <h1 class="display-4 fw-normal">Certificate Verification</h1>
+        </div>
+
+      <main>
+        <div class="row mb-3 text-center">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <h1>Oops!</h1>
+            <img src="{% static 'sad-face.png' %}" alt="Navprayas" height="150px"/>
+            <div>
+              <h5><br>Sorry, We couldn't find your certificate.</h5>
+              <h5>Make sure you entered the correct Certificate Number.</h5>
+              <br />
+              <h5>
+                If you find this a mistake, please contact
+                <a href="http://navprayas.in" target="_blank">Navprayas</a> Team.
+              </h5>
+              <div class="return">
+                <a href="{% url 'index' %}">Return</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </main>
+{% endblock content %}
+

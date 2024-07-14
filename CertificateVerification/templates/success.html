@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+<center><image class="align-items-center justify-content-center text-center>" src="{% static 'favicon.png' %}" style="width:30%;"></center>
+          <h1 class="display-4 fw-normal">Certificate Verification</h1>
+        </div>
+
+      <main>
+        <div class="row mb-3 text-center">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <div class="return">
+              <a href="{% url 'index' %}">Check Another</a>
+            </div>
+            <img class="certificate__img" src="{% static 'source.gif' %}" alt="Navprayas" />
+            {% if member %}
+            <h4>Hey {{details.name}},<br><br> Thank you for your contributions in {{details.contributions}} organised by Navprayas in {{details.year}}!!</h4><br>
+            <h5>Certificate Number : <br>{{details.certificate_num}}</h5>
+            {% else %}
+            <h4>Hey {{details.name}},<br><br> You just got certified for {{details.event}} organised by Navprayas in {{details.year}}!!</h4><br>
+            <h5>Certificate Number : <br>{{details.cert_id}}</h5>
+            {% endif %}
+            <br>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </main>
+{% endblock content %}
+

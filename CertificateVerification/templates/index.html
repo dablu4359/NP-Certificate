@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+<center><image class="align-items-center justify-content-center text-center>" src="{% static 'favicon.png' %}" style="width:30%;"></center>
+          <h1 class="display-4 fw-normal">Certificate Verification</h1>
+          <p class="fs-5 text-muted">
+            Just enter your Certificate ID to verify your certificate.
+          </p>
+        </div>
+      </header>
+
+      <main>
+        <div class="row mb-3 text-center">
+          <div class="col-md-4"></div>
+          <div class="col-md-4">
+            <form action="{% url 'certificate' %}" method="POST">
+            {% csrf_token %}
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="floatingInput"
+                  name="number"
+                  placeholder="XYZ-NPCODE11-XY0001-MZY"
+                />
+                <label for="floatingInput">Certificate Number</label>
+              </div>
+              <br />
+              <button class="w-100 btn btn-lg btn-primary" type="submit">
+                Verify
+              </button>
+            </form>
+          </div>
+          <div class="col-md-4"></div>
+        </div>
+      </main>
+{% endblock content %}
+
