@@ -1,0 +1,1 @@
+web: gunicorn Navprayas.wsgi --log-file -
